@@ -1,0 +1,155 @@
+import time
+import random
+
+
+def print_pause(msge_to_display):
+    print(msge_to_display)
+    time.sleep(2)
+
+
+def intro_scene(option):
+    print_pause("Welcome to the Adventure Game!")
+    print_pause("As a gold miner, you keep collecting gold that is under ground.")
+    print_pause("However, your new boss turned out to be a very rude , cold person and overworking all the miners there.")
+    print_pause("And he didn't even give you a proper salary that was enough for you and your family.")
+    print_pause("So you couldn't stand there and watch , you decided you will do something....")
+
+
+def main_scene(option):
+    print_pause("First, you need to make a plan..")
+    print_pause("Choose your plan! please enter a number:")
+    choice = input("1. go to trick one/n"
+                   "2. go to trick two/n ")
+    if choice == "1":
+        trick_one()
+    else:
+        trick_two()
+
+
+def trick_one(option):
+    wellness = 100
+    print_pause(
+        "You decided that you will put a medicine in your boss's coffee that makes your boss sleep for a while...")
+    print_pause("your friends help you to distract the guards that are standing in front of the boss's office... ")
+    print_pause("your boss successfully drank the coffee and slept..")
+    print_pause("your friends failed to distract the guards by screaming that something big fell down.. ")
+    print_pause("and they entered while you were turning off all the cameras that were placed in the gold mine...")
+    trick_one_choice()
+
+
+def trick_one_choice(option):
+    trick_choice = input("1. Fight the guards/n"
+                          "2. Escape in the room/n")
+    if trick_choice == "1":
+        fight_guards()
+    else:
+        escape_guards()
+
+
+def fight_guards(option):
+    harm = round (random.randint(0,50)-1)
+
+    if "shooter" in option:
+     harm = harm + 50
+     print_pause("the guards were confused at first but realized what's going on and ... ")
+     print_pause("started coming towards you...")
+     print_pause("you took out your "+ option +" and started fighting the guards..")
+     print_pause("you successfully killed all the guards with the shooter.")
+    elif "shooter" not in option:
+     harm = harm/35
+     print_pause("you fight the guards using a knife that wasn't so effective!")
+     print_pause("you are killed.")
+     print_pause("you lost.")
+     fight_scene()
+
+
+
+
+def escape_guards(option):
+    print_pause("you quickly hide under your boss's desk where he is sleeping.... ")
+    print_pause("however, the rest of the guards who are outside come and catch you. ")
+    fight_scene()
+
+
+def trick_two(option):
+    wellness = 100
+    print_pause( "You and the other gold miners throw a bomb on a part of the mine...")
+    print_pause("everything is burning, factory smoke and screams...")
+    print_pause("the boss is shocked and is running with his guards to see what's going on ... ")
+    print_pause("you divided the plan on most of the miners because all the people there hated him so they help you..")
+    print_pause("the other miners where beside the burning part of the mine..")
+    print_pause("a miner turned off all the cameras that were placed in the gold mine...")
+    print_pause("you took the others and went to collect as much gold as you all can collect...")
+    print_pause("unluckily, you find your boss in front of you..")
+    print_pause("on his right side are his guards and on the other side are some of the evil miners that are loyal to him..")
+    trick_two_choice()
+
+
+
+
+
+
+def trick_two_choice(option):
+    trick_choice = input("1. Fight everyone with the miners./n"
+                          "2.act that you all are doing something/n")
+    if trick_choice == "1":
+        fight_guards2()
+    else:
+        act()
+
+
+def fight_guards2(option):
+    harm = round (random.randint(0,50)-1)
+
+    if "shooter" in option:
+     harm = harm + 50
+     print_pause("the guards were confused at first but realized what's going on and ... ")
+     print_pause("started coming towards you...")
+     print_pause("you and the miners  took out your "+ option +" and started fighting the guards and the other miners..")
+     print_pause("you successfully killed all the guards with the shooter.")
+    elif "shooter" not in option:
+     harm = harm /35
+     print_pause("you all fight the guards using a knife that wasn't so effective!")
+     print_pause("you and the miners are killed.")
+     print_pause("you lost.")
+     fight_scene()
+
+
+def act(option):
+    print_pause("you quickly act as if nothing is going on and .... ")
+    print_pause("and the boss believed you all. ")
+    print_pause("you won!")
+    fight_scene(option)
+
+
+def play_again():
+    again = input("Would you like to play again? (y/n)").lower()
+    if again == "y":
+        print_pause("\n\n\n Restarting the game ...\n\n\n")
+        main_game()
+    elif again == "n":
+        print_pause("\n\n\nThanks for playing!\n\n\n")
+    else:
+        play_again()
+
+
+
+
+
+def fight_scene(option, wellness , harm):
+    if wellness < harm:
+        print_pause(f"your wellness is {wellness} and your harm is {harm}")
+        print_pause("you lost.")
+        play_again()
+    else:
+        print_pause(f"your wellness is {wellness} and your harm is {harm}")
+        print_pause("you won!.")
+        play_again()
+
+
+
+def main_game():
+    option = random.choice(["gun","knife"])
+    wellness= 100
+    intro_scene()
+    main_scene()
