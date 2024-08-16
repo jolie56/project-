@@ -1,0 +1,83 @@
+import time
+
+
+def print_pause(print_message):
+    print(print_message)
+    time.sleep(2)
+
+
+name = input("Welcome to adventure game! enter Your Name : ")
+
+print_pause("Greetings, " + name + "\n###Let's Start the Game###")
+
+print_pause("""\nAs you slowly regained consciousness, you found yourself in a strange room bathed in an eerie glow.
+There are three imposing doors, each beckoning you towards a different path.
+Which door would you choose---1, 2 or 3???""")
+
+door = input(">")
+
+if (door == "1"):
+    print_pause("You entered the First room and through time travelling you found yourself in a an ancient Battle")
+    print_pause("By looking at the Flag of an Empire you come to knw that\nIt is the battle of Spartans")
+    print_pause("You hide in the bush and finds a Sword lying on the ground")
+    print_pause("What would you do???")
+    print_pause("1-Pick the Sword and Run from the Battleground")
+    print_pause("2-Pick the Sword and Fight for your life")
+    print_pause("3-Leave it and come back to Present time without altering the timeline")
+
+    options = input(">")
+    if (options == "1"):
+        print_pause("As you started running\nomeone from back hit you with the Arrow!\nBoom!!!You are dead.")
+    elif (options == "2"):
+        print_pause(
+            "You started fighting from the spartans side, \nluckily you survived the battlefield and lived the rest of the life as a commander in the Army\nYou stucked in the past for the rest of your life")
+    elif (options == "3"):
+        print_pause(
+            "You leaved the sword in its place and witnessed the ancient war.\nCame back to present time\nWith the memories of the huge Battlefield, which you can't share with anyone.\n###You Won the Game###")
+    else:
+        print_pause("Type a Number!!!\nGAME OVER\nPLEASE RESTART the GAME")
+
+if (door == "2"):
+    print_pause("You entered the Second room and found yourself in a remote jungle with an ancient map beside you")
+    print_pause("The Map contains a route leading to a treasure hidden in the forest")
+    print_pause('What would you do???')
+    print_pause("1-Wait for the help.")
+    print_pause("2-Find for an exit on on your own.")
+    print_pause("3-Take the Map.")
+
+    forest = input(">")
+    if (forest == "1"):
+        print_pause(
+            "No one was there to help you.\nYou hide from the wild animals for a while.\nGets killed by the Wolf in the End")
+    elif (forest == "2"):
+        print_pause(
+            "You look for an exit in jungle on your own.\nIn the pain of hunger you ate poisoned berries.\nGood job! You Died!!!")
+    elif (forest == "3"):
+        print_pause(
+            "You followed the Map, discovered some beautiful sceneries of deep forest.\nFinally reached the treasure chest.\nYou opened the chest but it was empty")
+        print_pause(
+            "You get disappointed\nAfter walking for a while.\nYou saw a river and sat near the river and relaxed.\n###You Won the Game###")
+    else:
+        print_pause("Type a Number!!!\nGAME OVER\nPLEASE RESTART the GAME")
+if (door == "3"):
+    print_pause("You entered the Third room and found yourself in front of a Witch brewing Potions")
+    print_pause("She ask-What are you doing here young boy?")
+    print_pause("What will you answer-")
+    print_pause("1-You tell her that you're lost, and want to get out of here.")
+    print_pause("2-You stab her with a knife.")
+    print_pause("3-You try to runway.")
+
+    witch = input(">")
+    if (witch == "1"):
+        print_pause("She cast a spell on you and you become unconscious.")
+        print_pause("She brewed you into her potion")
+        print_pause("Good bye! You Died")
+    elif (witch == "2"):
+        print_pause("You come close to her and swing your knife at her face and then stab her to death.")
+        print_pause("Good job. You are free now.\nWith a tag of Murderer!!!\n###But You Won the Game###")
+    elif (witch == "3"):
+        print_pause("She casts a spell that freezes you in place.")
+        print_pause("She prisoned you in her cabin.")
+        print_pause("Good job! You became her slave for the rest of your life.")
+    else:
+        print_pause("Type a Number!!!\nGAME OVER\nPLEASE RESTART the GAME")
